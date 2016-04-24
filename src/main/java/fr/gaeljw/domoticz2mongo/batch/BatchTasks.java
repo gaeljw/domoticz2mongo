@@ -24,7 +24,7 @@ public class BatchTasks {
     @Autowired
     private Job importTemperaturesJob;
 
-    @Scheduled(fixedDelay = 30000)
+    @Scheduled(fixedDelayString = "${domoticz.query.interval}")
     public void importTemperatures() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
         LOGGER.info("Running importTemperaturesJob");
         jobLauncher.run(importTemperaturesJob, new JobParameters());
