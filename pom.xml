@@ -10,7 +10,7 @@
 
     <groupId>fr.gaeljw.domoticz2mongo</groupId>
     <artifactId>domoticz2mongo</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>domoticz2mongo</name>
@@ -18,7 +18,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/gaeljw/domoticz2mongo.git</developerConnection>
-      <tag>domoticz2mongo-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <properties>
