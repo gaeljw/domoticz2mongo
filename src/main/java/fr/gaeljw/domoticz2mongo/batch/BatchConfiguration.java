@@ -93,18 +93,6 @@ public class BatchConfiguration {
         return new MongoTemplate(mongoDbFactory());
     }
 
-//    @Bean
-//    public Mongo mongo() throws UnknownHostException {
-//        return new Mongo("localhost");
-//    }
-
-//    @Bean
-//    public MongoClientFactoryBean mongo() {
-//        MongoClientFactoryBean factory = new MongoClientFactoryBean();
-//        factory.setHost("localhost");
-//        return factory;
-//    }
-
     @Bean
     public MongoDbFactory mongoDbFactory() throws UnknownHostException {
         return new SimpleMongoDbFactory(new MongoClientURI(mongoClientUri));
