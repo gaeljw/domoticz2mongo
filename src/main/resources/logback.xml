@@ -2,10 +2,10 @@
 <configuration>
 
     <appender name="TIME_BASED_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/apps/domoticz2mongo/logs/gdomoticz.log</file>
+        <file>/apps/domoticz2mongo/logs/domoticz2mongo.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>/apps/domoticz2mongo/logs/gdomoticz.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>/apps/domoticz2mongo/logs/domoticz2mongo.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
 
