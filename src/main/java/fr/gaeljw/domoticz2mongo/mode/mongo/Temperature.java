@@ -15,6 +15,8 @@ public class Temperature {
     private ObjectId id;
     @Field("idDevice")
     private String idDevice;
+    @Field("nameDevice")
+    private String nameDevice;
     @Field("dateTime")
     private Date dateTime; // Mongo Driver does not handle Java 8 Time well for now
     @Field("temperature")
@@ -34,6 +36,14 @@ public class Temperature {
 
     public void setIdDevice(String idDevice) {
         this.idDevice = idDevice;
+    }
+
+    public String getNameDevice() {
+        return nameDevice;
+    }
+
+    public void setNameDevice(String nameDevice) {
+        this.nameDevice = nameDevice;
     }
 
     public Date getDateTime() {

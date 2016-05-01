@@ -19,6 +19,7 @@ public class DomoticzResultItemProcessor implements ItemProcessor<DomoticzResult
         LOGGER.info("Processing temperature for device id {}", domoticzResult.getIdx());
         Temperature t = new Temperature();
         t.setIdDevice(domoticzResult.getIdx());
+        t.setNameDevice(domoticzResult.getName());
         t.setDateTime(new Date()); // TODO or use lastUpdate from result if newer
         t.setTemperature(domoticzResult.getTemp());
         return t;
