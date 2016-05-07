@@ -14,10 +14,21 @@
         </encoder>
     </appender>
 
+    <appender name="MONGO_RETRY" class="ch.qos.logback.core.FileAppender">
+        <file>/apps/domoticz2mongo/logs/mongoRetry.log</file>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
     <root level="INFO">
         <appender-ref ref="TIME_BASED_FILE"/>
     </root>
 
     <logger name="org.springframework.web" level="INFO"/>
     <logger name="fr.gaeljw.domoticz2mongo" level="INFO"/>
+
+    <logger name="MONGO.RETRY" level="INFO" additivity="false">
+        <appender-ref ref="MONGO_RETRY"/>
+    </logger>
 </configuration>

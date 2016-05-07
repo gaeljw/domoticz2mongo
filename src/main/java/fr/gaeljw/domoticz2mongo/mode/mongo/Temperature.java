@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.text.SimpleDateFormat;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
@@ -60,5 +61,25 @@ public class Temperature {
 
     public void setTemperature(double temperature) {
         this.temperature = temperature;
+    }
+
+    public String toMongoJson(boolean showId) {
+        // TODO use Jackson ?
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        StringBuilder builder = new StringBuilder();
+        builder.append("{");
+        if (showId) {
+            builder.append("id:" + id);
+            builder.append(", ");
+        }
+        builder.append("idDevice:\"" + idDevice + "\"");
+        builder.append(", ");
+        builder.append("nameDevice:\"" + nameDevice + "\"");
+        builder.append(", ");
+        builder.append("dateTime:ISODate(\"" + dateFormat.format(dateTime) + "\")");
+        builder.append(", ");
+        builder.append("temperature:" + temperature);
+        builder.append("}");
+        return builder.toString();
     }
 }
