@@ -1,0 +1,25 @@
+
+Without any index :
+
+Day - Average time : 214.615ms
+Month - Average time : 215.732ms
+
+With {dateTime:1} :
+
+Day - Average time : 177.223ms
+Month - Average time : 215.537ms
+
+With {dateTime:1, show:1} :
+
+Day - Average time : 182.806ms
+Month - Average time : 213.929ms
+
+Avoiding show with null values :
+
+Day - Average time : 170.407ms
+Month - Average time : 216.8ms
+
+Updating requests ($ne -> $eq) :
+
+Day - Average time : 172.079ms
+Month - Average time : 218.187ms
