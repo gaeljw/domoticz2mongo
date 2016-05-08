@@ -22,6 +22,8 @@ public class Temperature {
     private Date dateTime; // Mongo Driver does not handle Java 8 Time well for now
     @Field("temperature")
     private double temperature;
+    @Field("show")
+    private boolean show = true;
 
     public ObjectId getId() {
         return id;
@@ -79,6 +81,8 @@ public class Temperature {
         builder.append("dateTime:ISODate(\"" + dateFormat.format(dateTime) + "\")");
         builder.append(", ");
         builder.append("temperature:" + temperature);
+        builder.append(", ");
+        builder.append("show:" + show);
         builder.append("}");
         return builder.toString();
     }
